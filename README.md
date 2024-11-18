@@ -70,18 +70,23 @@ This was done to enable threat indicators to be pulled from the threat inidicato
 
 14. Continue to follow MISP to Microsoft Sentinel Integration instructions and skip Keyvault step due to error.
 ![image](https://github.com/user-attachments/assets/32c25666-a3fb-4154-afbc-37c52a225635)
+
 Downloaded repo to visual studio code. The Python script for a main function was not working and generated errors due to not having a multi tenant set up and deleted the following code.
+
 ![image](https://github.com/user-attachments/assets/bbbe47b7-227a-48b9-b308-919c37337d60)
 
-15. Use the Function App to pull directly from MISP into Sentinel due to error. Decided to utlize environmental variables wihtin the Azure function app.
+16. Use the Function App to pull directly from MISP into Sentinel due to error. Decided to utlize environmental variables wihtin the Azure function app.
 ![image](https://github.com/user-attachments/assets/4cab3ff1-1b30-4bd0-a42d-28fdbe710aaf)
+
 Ensure that the name of the function is the same as the config below: "tenant_id", "client_id", "client_secret" etc...
+
 ![image](https://github.com/user-attachments/assets/21cd05de-d3f9-4f87-a3f3-eb4ab6064baf)
 
-16. Added a timer trigger schedule utliizing python script.
+18. Added a timer trigger schedule utliizing python script.
 
-18. After completed, utilized Threat inteligence indicator to generate alerts.
+19. After completed, utilized Threat inteligence indicator to generate alerts.
 ![image](https://github.com/user-attachments/assets/6c10035e-70af-45af-8a1d-a48c6c0e582c)
 ![image](https://github.com/user-attachments/assets/12d986e7-a9c4-437d-858b-4205c4d43b09)
+
 I had threat intelligence indicators, specifically network IP addresses, and I configured the system to flag any security event containing an IP address from a predefined list. For instance, if an event included an IP address from a list I created—composed of highly malicious IPs with a confidence score of 100—I integrated this into an analytics rule. This setup allowed me to establish a custom detection mechanism to identify these high-risk network IPs.
 
